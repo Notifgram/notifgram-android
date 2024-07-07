@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+option java_package = "com.notifgram.core.data_datastore";
+option java_multiple_files = true;
+
+message AppSettings {
+  string postLastRemoteChange = 2;
+  string channelLastRemoteChange = 3;
+  bool isAuthEnabled = 4;
+  bool isAuthSupported = 5;
+  bool shouldEncrypt = 6;
+  bool shouldEncryptChunks = 7;
+  bool isFcmUsageEnabled = 8;
+
+  string encryptedSqlCipherPassphrase = 20;
+}
