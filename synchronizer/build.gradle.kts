@@ -25,7 +25,6 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = libs.versions.isMinifyEnabled.get().toBoolean()
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"),
                 "proguard-rules.pro"
