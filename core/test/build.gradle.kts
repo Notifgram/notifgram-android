@@ -50,7 +50,6 @@ dependencies {
     debugApi(libs.androidx.compose.ui.testManifest)
 //    implementation(libs.core.ktx)
 //    implementation(libs.appcompat)
-//    implementation(libs.android.material)
 ////    testImplementation(libs.junit4)
 //    androidTestImplementation(libs.androidx.test.ext.junit)
 //    androidTestImplementation(libs.androidx.test.espresso.core)

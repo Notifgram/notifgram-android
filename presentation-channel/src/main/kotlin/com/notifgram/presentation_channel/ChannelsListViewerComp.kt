@@ -8,13 +8,12 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.pullrefresh.PullRefreshIndicator
-import androidx.compose.material.pullrefresh.pullRefresh
-import androidx.compose.material.pullrefresh.rememberPullRefreshState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.Text
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -33,8 +32,8 @@ import kotlinx.coroutines.launch
 private const val TAG = "ChannelsListViewerComp"
 
 @OptIn(
-    ExperimentalMaterialApi::class, InternalCoroutinesApi::class,
-    ExperimentalCoroutinesApi::class
+     InternalCoroutinesApi::class,
+    ExperimentalCoroutinesApi::class, ExperimentalMaterial3Api::class
 )
 @Composable
 internal fun ChannelsListViewerComp(
@@ -53,24 +52,25 @@ internal fun ChannelsListViewerComp(
     val refreshScope = rememberCoroutineScope()
     var refreshing by rememberSaveable { mutableStateOf(false) }
 
-    val pullRefreshState = rememberPullRefreshState(
-        refreshing = refreshing,
-        onRefresh = {
-            refreshScope.launch {
-                refreshing = true
-//                delay(1500)  // TODO: Remove this line
-//                viewModel.onEvent(ChannelListingsEvent.Refresh)
-                onPullRefresh()
-                refreshing = false
-            }
-        })
+    val pullRefreshState = rememberPullToRefreshState()
 
     if (isSearchingState) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
 //    val sortedItems = channelsState.sortedBy { it.isEnable }
 
     if (channelsState.items.isEmpty())
         NoSearchResultsComp()
-    Box(Modifier.pullRefresh(pullRefreshState)) {
+    PullToRefreshBox(
+        isRefreshing = refreshing,
+        onRefresh = {
+            refreshScope.launch {
+                refreshing = true
+                onPullRefresh()
+                refreshing = false
+            }
+        },
+        state = pullRefreshState,
+        modifier = Modifier.fillMaxSize()
+    ) {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()
@@ -108,7 +108,6 @@ internal fun ChannelsListViewerComp(
                 }
             }// End if
         }// end LazyColumn
-        PullRefreshIndicator(refreshing, pullRefreshState, Modifier.align(Alignment.TopCenter))
     }//end Box
 
 }

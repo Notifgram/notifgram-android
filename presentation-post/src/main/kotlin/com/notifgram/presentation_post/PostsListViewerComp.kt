@@ -6,12 +6,11 @@ import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.material.ExperimentalMaterialApi
-import androidx.compose.material.pullrefresh.PullRefreshIndicator
-import androidx.compose.material.pullrefresh.pullRefresh
-import androidx.compose.material.pullrefresh.rememberPullRefreshState
+import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.HorizontalDivider
 import androidx.compose.material3.LinearProgressIndicator
+import androidx.compose.material3.pulltorefresh.PullToRefreshBox
+import androidx.compose.material3.pulltorefresh.rememberPullToRefreshState
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
@@ -29,8 +28,8 @@ import kotlinx.coroutines.launch
 private const val TAG = "PostsListViewerComp"
 
 @OptIn(
-    ExperimentalMaterialApi::class, InternalCoroutinesApi::class,
-    ExperimentalCoroutinesApi::class
+     InternalCoroutinesApi::class,
+    ExperimentalCoroutinesApi::class, ExperimentalMaterial3Api::class
 )
 @Composable
 internal fun PostsListViewerComp(
@@ -48,15 +47,7 @@ internal fun PostsListViewerComp(
 
     val refreshScope = rememberCoroutineScope()
     var refreshing by rememberSaveable { mutableStateOf(false) }
-    val pullRefreshState = rememberPullRefreshState(
-        refreshing = refreshing,
-        onRefresh = {
-            refreshScope.launch {
-                refreshing = true
-                onPullRefresh()
-                refreshing = false
-            }
-        })
+    val pullRefreshState = rememberPullToRefreshState()
 
     if (isSearchingState) LinearProgressIndicator(modifier = Modifier.fillMaxWidth())
 //    val sortedItems = postsState.sortedBy { it.isEnable }
@@ -64,7 +55,18 @@ internal fun PostsListViewerComp(
     if (postsState.items.isEmpty())
         NoSearchResultsComp()
     else
-        Box(Modifier.pullRefresh(pullRefreshState)) {
+        PullToRefreshBox(
+            isRefreshing = refreshing,
+            onRefresh = {
+                refreshScope.launch {
+                    refreshing = true
+                    onPullRefresh()
+                    refreshing = false
+                }
+            },
+            state = pullRefreshState,
+            modifier = Modifier.fillMaxSize()
+        ) {
             LazyColumn(
                 modifier = Modifier
                     .fillMaxSize()
@@ -97,7 +99,6 @@ internal fun PostsListViewerComp(
                     }
                 }// End if
             }// end LazyColumn
-            PullRefreshIndicator(refreshing, pullRefreshState, Modifier.align(Alignment.TopCenter))
-        }//end Box
 
+        }
 }
