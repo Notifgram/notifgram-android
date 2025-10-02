@@ -46,7 +46,6 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.core.ktx)
     implementation(libs.appcompat)
-    implementation(libs.android.material)
 
     implementation(platform(libs.firebase.bom))
     implementation(libs.firebase.messaging)

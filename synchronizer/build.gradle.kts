@@ -68,7 +68,6 @@ dependencies {
     androidTestImplementation(libs.kotlin.test.junit)
     implementation(libs.core.ktx)
 //    implementation(libs.appcompat)
-    implementation(libs.android.material)
     androidTestImplementation(libs.androidx.test.ext.junit)
 //    androidTestImplementation(libs.androidx.test.espresso.core)
 }

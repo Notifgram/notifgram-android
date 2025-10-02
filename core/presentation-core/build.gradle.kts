@@ -61,8 +61,6 @@ dependencies {
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.ui)
-    implementation(libs.compose.material)
-    implementation(libs.android.material)
     implementation(libs.compose.material3)
     implementation(libs.material.icons.extended)
     implementation(libs.ui.tooling.preview)
