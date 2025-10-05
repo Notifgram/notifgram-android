@@ -9,14 +9,6 @@ buildscript {
 
     dependencies {
         classpath(libs.google.services)
-//        classpath "com.google.firebase:firebase-crashlytics-gradle:2.9.2"
-        classpath(libs.hilt.android.gradle.plugin)
-
-        classpath(libs.jacoco.android)
-        classpath(libs.android.gradlePlugin)
-        classpath(libs.org.jacoco.core)
-        classpath(libs.sonarqube.gradle.plugin)
-
     }
 
 }
@@ -31,6 +23,8 @@ plugins {
     alias(libs.plugins.kover)
     alias(libs.plugins.jlleitschuh.ktlint) apply false
     alias(libs.plugins.kotlin.serialization) apply false
+    alias(libs.plugins.sonarqube) apply false
+    alias(libs.plugins.hilt) apply false
 
 }
 

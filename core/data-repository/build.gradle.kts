@@ -1,7 +1,7 @@
 import com.android.ide.common.util.toPathString
 
 plugins {
-    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.kotlin.serialization)
     id("notifgram.android.library.jacoco")
     id("org.jetbrains.kotlin.android")
@@ -19,8 +19,6 @@ android {
     compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
-
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -31,13 +29,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
     }
 }
 

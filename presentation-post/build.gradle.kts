@@ -1,7 +1,7 @@
 import com.android.ide.common.util.toPathString
 
 plugins {
-    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("notifgram.android.library.jacoco")
     id("dagger.hilt.android.plugin")
@@ -9,6 +9,8 @@ plugins {
     id("org.jetbrains.kotlinx.kover")
     alias(libs.plugins.com.google.devtools.ksp)
     id("org.sonarqube")
+    alias(libs.plugins.compose)
+
 }
 
 android {
@@ -16,8 +18,6 @@ android {
     compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -30,14 +30,7 @@ android {
             )
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
-        // useIR = true
-    }
+
     buildFeatures {
         compose = true
     }

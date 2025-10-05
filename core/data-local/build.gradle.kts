@@ -3,7 +3,7 @@ import com.android.ide.common.util.toPathString
 
 plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.notifgram.android.library)
     id("notifgram.android.library.jacoco")
     id("org.jetbrains.kotlinx.kover")
     id("org.sonarqube")
@@ -17,7 +17,6 @@ android {
     compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
         testInstrumentationRunner = "com.notifgram.core.common.AppTestRunner"
 
         consumerProguardFiles("consumer-rules.pro")
@@ -33,13 +32,6 @@ android {
         debug {
             enableAndroidTestCoverage = true
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
     }
 }
 

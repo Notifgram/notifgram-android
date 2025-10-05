@@ -19,16 +19,26 @@ kotlin {
 }
 
 dependencies {
-    compileOnly(libs.android.gradlePlugin)
+    compileOnly(libs.android.gradleApiPlugin)
+    compileOnly(libs.android.tools.common)
+
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
     plugins {
+        register("androidApplication") {
+            id = "notifgram.android.application"
+            implementationClass = "AndroidApplicationConventionPlugin"
+        }
         register("androidApplicationJacoco") {
             id = "notifgram.android.application.jacoco"
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
+        }
+        register("androidLibrary") {
+            id = "notifgram.android.library"
+            implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryJacoco") {
             id = "notifgram.android.library.jacoco"

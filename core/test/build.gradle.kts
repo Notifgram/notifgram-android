@@ -1,6 +1,5 @@
-@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
 }
 
@@ -9,8 +8,6 @@ android {
     compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles("consumer-rules.pro")
     }
@@ -23,13 +20,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
     }
 }
 
