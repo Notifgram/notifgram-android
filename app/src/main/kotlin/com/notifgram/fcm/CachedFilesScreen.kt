@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.ViewModel
 import com.notifgram.core.common.MyLog.i
-import com.notifgram.core.presentation_core.theme.notifgramTheme
+import com.notifgram.core.presentation_core.theme.NotifgramTheme
 import dagger.hilt.android.lifecycle.HiltViewModel
 import java.io.File
 import javax.inject.Inject
@@ -247,7 +247,7 @@ fun CachedFilesScreen(
 @Preview
 @Composable
 fun TestScreenPreview() {
-    notifgramTheme {
+    NotifgramTheme {
         CachedFilesScreen()
     }
 
