@@ -69,6 +69,22 @@ jobs:
        #   build-scan-terms-of-use-url: "https://gradle.com/terms-of-service"
         #  build-scan-terms-of-use-agree: "yes"
 
+      - name: Create fake google-services.json
+        run: |
+          mkdir -p app
+          cat <<EOF > app/google-services.json
+          {
+            "project_info": {
+              "project_number": "000000000000",
+              "firebase_url": "",
+              "project_id": "",
+              "storage_bucket": ""
+            },
+            "client": [],
+            "configuration_version": "1"
+          }
+          EOF
+
       - name: Check build-logic
         run: ./gradlew :build-logic:convention:check
 
