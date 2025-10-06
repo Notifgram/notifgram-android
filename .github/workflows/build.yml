@@ -77,17 +77,28 @@ jobs:
             "project_info": {
               "project_number": "000000000000",
               "firebase_url": "",
-              "project_id": "",
+              "project_id": "fake-project",
               "storage_bucket": ""
             },
             "client": [
               {
                 "client_info": {
-                  "mobilesdk_app_id": "...",
+                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
                   "android_client_info": {
                     "package_name": "com.notifgram"
                   }
                 },
+                "oauth_client": [],
+                "api_key": [
+                  {
+                    "current_key": "FAKE_KEY"
+                  }
+                ],
+                "services": {
+                  "appinvite_service": {
+                    "other_platform_oauth_client": []
+                  }
+                }
               }
             ],
             "configuration_version": "1"
