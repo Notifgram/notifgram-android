@@ -10,7 +10,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
         with(target) {
             apply(plugin = "com.android.library")
             apply(plugin = "org.jetbrains.kotlin.android")
-//            apply(plugin = "nowinandroid.android.lint")
+//            apply(plugin = "notifgram.android.lint")
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)

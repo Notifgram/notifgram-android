@@ -44,6 +44,9 @@ gradlePlugin {
             id = "notifgram.android.library.jacoco"
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
-
+        register("androidFirebase") {
+            id = libs.plugins.notifgram.android.application.firebase.get().pluginId
+            implementationClass = "AndroidApplicationFirebaseConventionPlugin"
+        }
     }
 }

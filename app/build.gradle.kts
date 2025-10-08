@@ -12,7 +12,9 @@ plugins {
     //id("jacoco")
     id("org.jetbrains.kotlinx.kover")
     alias(libs.plugins.compose)
-    id("com.google.gms.google-services")// Must be at the end
+//    id("com.google.gms.google-services")// Must be at the end
+    alias(libs.plugins.notifgram.android.application.firebase)
+
 }
 
 android {
@@ -108,10 +110,10 @@ dependencies {
     
     implementation(libs.security.crypto.ktx)
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.messaging){
-        exclude(group = "com.google.firebase", module = "protolite-well-known-types")
-    }
+//    implementation(platform(libs.firebase.bom))
+//    implementation(libs.firebase.messaging){
+//        exclude(group = "com.google.firebase", module = "protolite-well-known-types")
+//    }
 //    implementation(libs.firebase.inappmessaging.display)
 
     implementation(libs.compose.material3)

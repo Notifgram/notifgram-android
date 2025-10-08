@@ -1,6 +1,5 @@
 import com.android.ide.common.util.toPathString
 
-
 plugins {
     alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)

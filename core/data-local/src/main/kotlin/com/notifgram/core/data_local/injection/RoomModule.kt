@@ -61,7 +61,7 @@ internal object RoomModule {
             //Allows Room to destructively recreate database tables if Migrations that would
             // migrate old database schemas to the latest schema version are not found.
             //Source:https://developer.android.com/reference/android/arch/persistence/room/RoomDatabase.Builder
-            fallbackToDestructiveMigration()
+            fallbackToDestructiveMigration(false)
 
         }.build()
 
