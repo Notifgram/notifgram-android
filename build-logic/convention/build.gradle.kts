@@ -1,3 +1,4 @@
+import org.gradle.kotlin.dsl.get
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
@@ -29,19 +30,19 @@ dependencies {
 gradlePlugin {
     plugins {
         register("androidApplication") {
-            id = "notifgram.android.application"
+            id = libs.plugins.notifgram.android.application.asProvider().get().pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
         }
         register("androidApplicationJacoco") {
-            id = "notifgram.android.application.jacoco"
+            id = libs.plugins.notifgram.android.application.jacoco.get().pluginId
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
         }
         register("androidLibrary") {
-            id = "notifgram.android.library"
+            id = libs.plugins.notifgram.android.library.asProvider().get().pluginId
             implementationClass = "AndroidLibraryConventionPlugin"
         }
         register("androidLibraryJacoco") {
-            id = "notifgram.android.library.jacoco"
+            id = libs.plugins.notifgram.android.library.jacoco.get().pluginId
             implementationClass = "AndroidLibraryJacocoConventionPlugin"
         }
         register("androidFirebase") {

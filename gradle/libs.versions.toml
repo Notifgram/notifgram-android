@@ -231,4 +231,6 @@ gms = { id = "com.google.gms.google-services", version = "4.4.2" }
 # PLUGINS DEFINED BY THIS PROJECT
 notifgram-android-application = { id = "notifgram.android.application" }
 notifgram-android-library = { id = "notifgram.android.library" }
+notifgram-android-application-jacoco = { id = "notifgram.android.application.jacoco" }
+notifgram-android-library-jacoco = { id = "notifgram.android.library.jacoco" }
 notifgram-android-application-firebase = { id = "notifgram.android.application.firebase" }
