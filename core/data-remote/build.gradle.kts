@@ -15,7 +15,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.core.data_remote"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     buildFeatures {
         buildConfig = true

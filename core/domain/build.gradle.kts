@@ -15,7 +15,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.core.domain"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")

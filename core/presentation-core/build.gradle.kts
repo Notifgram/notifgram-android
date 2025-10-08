@@ -16,7 +16,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.core.presentation_core"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"

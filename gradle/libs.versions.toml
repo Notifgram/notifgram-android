@@ -2,8 +2,6 @@
 
 # VARIABLES
 defaultCompileSdkVersion = "35"
-defaultMinSdkVersion = "33"
-isMinifyEnabled = "true"
 kotlinCompilerExtensionVersion = "1.5.8"   #https://developer.android.com/jetpack/androidx/releases/compose-kotlin
 
 # FOR LIBRARIES

@@ -15,7 +15,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.synchronizer"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         testInstrumentationRunner = "com.notifgram.core.common.AppTestRunner"

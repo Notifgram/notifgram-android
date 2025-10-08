@@ -19,11 +19,10 @@ plugins {
 
 android {
     namespace = "com.notifgram"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         applicationId = "com.notifgram"
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
+        minSdk = 33
 
         versionCode = 1
         versionName = "1.0"
@@ -37,9 +36,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = libs.versions.isMinifyEnabled.get().toBoolean()
-
-            isShrinkResources = libs.versions.isMinifyEnabled.get().toBoolean()
+            isMinifyEnabled = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
+            isShrinkResources = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )

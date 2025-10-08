@@ -9,7 +9,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.presentation_debug"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         consumerProguardFiles("consumer-rules.pro")
