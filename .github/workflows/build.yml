@@ -70,7 +70,7 @@ jobs:
         #  build-scan-terms-of-use-agree: "yes"
 
       - name: Create fake google-services.json
-        uses: ./.github/actions/create-fake-google-services
+        uses: ./.github/actions/create-fake-google-services-json
 
       - name: Check build-logic
         run: ./gradlew :build-logic:convention:check
@@ -156,7 +156,7 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Create fake google-services.json
-        uses: ./.github/actions/create-fake-google-services
+        uses: ./.github/actions/create-fake-google-services-json
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
