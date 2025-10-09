@@ -70,40 +70,7 @@ jobs:
         #  build-scan-terms-of-use-agree: "yes"
 
       - name: Create fake google-services.json
-        run: |
-          mkdir -p app
-          cat <<EOF > app/google-services.json
-          {
-            "project_info": {
-              "project_number": "000000000000",
-              "firebase_url": "",
-              "project_id": "fake-project",
-              "storage_bucket": ""
-            },
-            "client": [
-              {
-                "client_info": {
-                  "mobilesdk_app_id": "1:000000000000:android:0000000000000000",
-                  "android_client_info": {
-                    "package_name": "com.notifgram"
-                  }
-                },
-                "oauth_client": [],
-                "api_key": [
-                  {
-                    "current_key": "FAKE_KEY"
-                  }
-                ],
-                "services": {
-                  "appinvite_service": {
-                    "other_platform_oauth_client": []
-                  }
-                }
-              }
-            ],
-            "configuration_version": "1"
-          }
-          EOF
+        uses: ./.github/actions/create-fake-google-services
 
       - name: Check build-logic
         run: ./gradlew :build-logic:convention:check
@@ -187,6 +154,9 @@ jobs:
 
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Create fake google-services.json
+        uses: ./.github/actions/create-fake-google-services
 
       - name: Make Gradle wrapper executable
         run: chmod +x ./gradlew
