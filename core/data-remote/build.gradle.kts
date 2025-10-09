@@ -1,7 +1,7 @@
 import com.android.ide.common.util.toPathString
 
 plugins {
-    alias(libs.plugins.com.android.library)
+    alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     id("notifgram.android.library.jacoco")
     id("dagger.hilt.android.plugin")
@@ -15,7 +15,6 @@ plugins {
 
 android {
     namespace = "com.notifgram.core.data_remote"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     buildFeatures {
         buildConfig = true
@@ -27,8 +26,6 @@ android {
         }
     }
     defaultConfig {
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
-
         consumerProguardFiles("consumer-rules.pro")
     }
 
@@ -39,13 +36,6 @@ android {
                 "proguard-rules.pro"
             )
         }
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
     }
 }
 

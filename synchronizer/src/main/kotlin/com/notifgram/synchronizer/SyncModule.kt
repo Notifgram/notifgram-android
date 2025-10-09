@@ -1,10 +1,10 @@
 package com.notifgram.synchronizer
 
+import com.google.firebase.Firebase
 import com.notifgram.core.data_repository.sync.SyncManager
 import com.notifgram.core.domain.usecase.StartSync
-import com.google.firebase.ktx.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.messaging.ktx.messaging
+import com.google.firebase.messaging.messaging
 import dagger.Binds
 import dagger.Module
 import dagger.Provides

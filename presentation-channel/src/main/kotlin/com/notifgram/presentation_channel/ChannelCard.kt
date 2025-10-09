@@ -37,7 +37,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.notifgram.core.domain.entity.Channel
 import com.notifgram.core.presentation_core.FakeDataGenerator
-import com.notifgram.core.presentation_core.theme.notifgramTheme
+import com.notifgram.core.presentation_core.theme.NotifgramTheme
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.InternalCoroutinesApi
 
@@ -204,7 +204,7 @@ fun ChannelCardContent(
 @Preview("light theme", device = Devices.TABLET, showBackground = true)
 @Composable
 private fun ChannelCardBuilderPreview() {
-    notifgramTheme {
+    NotifgramTheme {
         Column {
             ChannelCardBuilder(
                 FakeDataGenerator().generateSingleSampleChannel("name", "description"),

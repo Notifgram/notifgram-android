@@ -16,7 +16,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.notifgram.core.presentation_core.theme.notifgramTheme
+import com.notifgram.core.presentation_core.theme.NotifgramTheme
 import com.notifgram.core.presentation_core.utils.DevicePreviews
 import com.notifgram.presentation_debug.SeedDataState
 import kotlinx.coroutines.ExperimentalCoroutinesApi
@@ -141,7 +141,7 @@ fun LocalSeedDataScreen(
 @InternalCoroutinesApi
 @ExperimentalCoroutinesApi
 private fun LocalSeedDataScreenPreview() {
-    notifgramTheme {
+    NotifgramTheme {
         LocalSeedDataScreen()
     }
 }

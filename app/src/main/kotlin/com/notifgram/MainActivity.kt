@@ -26,7 +26,7 @@ import com.notifgram.core.common.FirebaseCloudMessaging
 import com.notifgram.core.common.MyLog.i
 import com.notifgram.core.common.loadAllStoredAliases
 import com.notifgram.core.domain.entity.settings.AppSettings
-import com.notifgram.core.presentation_core.theme.notifgramTheme
+import com.notifgram.core.presentation_core.theme.NotifgramTheme
 import com.notifgram.core.presentation_core.utils.RequestMultiplePermissions
 import com.google.firebase.FirebaseApp
 import com.notifgram.MainActivityUiState.Loading
@@ -170,7 +170,7 @@ class MainActivity : ComponentActivity() {
 
     private fun setContentForAppModalNavigationDrawer() {
         setContent {
-            notifgramTheme {
+            NotifgramTheme {
                 CompositionLocalProvider(
                     //Makes direction of whole app rtl. Source:https://cs.android.com/androidx/platform/frameworks/support/+/androidx-main:compose/material3/material3/integration-tests/material3-catalog/src/main/java/androidx/compose/material3/catalog/library/ui/theme/Theme.kt;l=50?q=CatalogTheme&sq=&ss=androidx%2Fplatform%2Fframeworks%2Fsupport
 //                    LocalLayoutDirection provides LayoutDirection.Rtl,

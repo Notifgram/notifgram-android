@@ -1,7 +1,7 @@
 import com.android.ide.common.util.toPathString
 
 plugins {
-    alias(libs.plugins.com.android.application)
+    alias(libs.plugins.notifgram.android.application)
     id("notifgram.android.application.jacoco")
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
@@ -11,16 +11,18 @@ plugins {
     id("org.sonarqube")
     //id("jacoco")
     id("org.jetbrains.kotlinx.kover")
-    id("com.google.gms.google-services")// Must be at the end
+    alias(libs.plugins.compose)
+//    id("com.google.gms.google-services")// Must be at the end
+    alias(libs.plugins.notifgram.android.application.firebase)
+
 }
 
 android {
     namespace = "com.notifgram"
-    compileSdk = libs.versions.defaultCompileSdkVersion.get().toInt()
 
     defaultConfig {
         applicationId = "com.notifgram"
-        minSdk = libs.versions.defaultMinSdkVersion.get().toInt()
+        minSdk = 33
 
         versionCode = 1
         versionName = "1.0"
@@ -34,9 +36,10 @@ android {
 
     buildTypes {
         release {
-            isMinifyEnabled = libs.versions.isMinifyEnabled.get().toBoolean()
-
-            isShrinkResources = libs.versions.isMinifyEnabled.get().toBoolean()
+            isMinifyEnabled = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
+            isShrinkResources = providers.gradleProperty("minifyWithR8")
+                .map(String::toBooleanStrict).getOrElse(true)
             proguardFiles(
                 getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro"
             )
@@ -46,13 +49,7 @@ android {
             enableAndroidTestCoverage = true
         }
     }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_17
-        targetCompatibility = JavaVersion.VERSION_17
-    }
-    kotlinOptions {
-        jvmTarget = libs.versions.jvmTarget.get()
-    }
+
     buildFeatures {
         compose = true
     }
@@ -113,9 +110,11 @@ dependencies {
     
     implementation(libs.security.crypto.ktx)
 
-    implementation(platform(libs.firebase.bom))
-    implementation(libs.firebase.messaging)
-    implementation(libs.firebase.inappmessaging.display)
+//    implementation(platform(libs.firebase.bom))
+//    implementation(libs.firebase.messaging){
+//        exclude(group = "com.google.firebase", module = "protolite-well-known-types")
+//    }
+//    implementation(libs.firebase.inappmessaging.display)
 
     implementation(libs.compose.material3)
     implementation(libs.ui.tooling.preview)

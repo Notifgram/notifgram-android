@@ -4,9 +4,9 @@ import com.notifgram.core.common.MyLog.e
 import com.notifgram.core.common.MyLog.i
 import com.google.android.gms.tasks.OnCompleteListener
 import com.google.android.gms.tasks.Task
-import com.google.firebase.ktx.Firebase
+import com.google.firebase.Firebase
 import com.google.firebase.messaging.FirebaseMessaging
-import com.google.firebase.messaging.ktx.messaging
+import com.google.firebase.messaging.messaging
 
 class FirebaseCloudMessaging {
 
