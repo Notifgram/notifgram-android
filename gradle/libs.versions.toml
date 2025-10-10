@@ -125,12 +125,13 @@ junit4 = { group = "junit", name = "junit", version = "4.13.2" }
 mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
 kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
-turbine = { group = "app.cash.turbine", name = "turbine", version = "1.0.0" }
+turbine = { group = "app.cash.turbine", name = "turbine", version = "1.2.0" }
 androidx-monitor = { group = "androidx.test", name = "monitor", version = "1.6.1" }
-androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version = "1.1.5" }
+androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version = "1.3.0-rc01" }
 androidx-test-ext-junit = { group = "androidx.test.ext", name = "junit", version = "1.1.5" }
 robolectric = { group = "org.robolectric", name = "robolectric", version = "4.11.1" }
-test_mockk = { module = "io.mockk:mockk", version = "1.13.10" }
+mockk = { module = "io.mockk:mockk", version = "1.13.10" }
+mockk-android = { module = "io.mockk:mockk-android", version = "1.14.6" }
 
 # ANDROID TEST
 espresso-idling-resource = { group = "androidx.test.espresso", name = "espresso-idling-resource", version.ref = "espresso-core" }
@@ -141,9 +142,9 @@ androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-t
 
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "orchestrator" }
-androidx-test-runner = { group = "androidx.test", name = "runner", version = "1.5.2" }
-androidx-test-rules = { group = "androidx.test", name = "rules", version = "1.5.0" }
-androidx-test-core = { group = "androidx.test", name = "core", version = "1.5.0" }
+androidx-test-runner = { group = "androidx.test", name = "runner", version = "1.7.0-rc01" }
+androidx-test-rules = { group = "androidx.test", name = "rules", version = "1.7.0-rc01" }
+androidx-test-core = { group = "androidx.test", name = "core", version = "1.7.0-rc01" }
 androidx-test-uiautomator = { group = "androidx.test.uiautomator", name = "uiautomator", version = "2.3.0" }
 
 # ACCOMPANIST

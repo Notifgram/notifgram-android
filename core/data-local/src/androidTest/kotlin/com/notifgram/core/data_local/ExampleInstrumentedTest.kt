@@ -17,6 +17,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.notifgram", appContext.packageName)
+        assertEquals("com.notifgram.core.data_local.test", appContext.packageName)
     }
 }

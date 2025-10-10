@@ -41,7 +41,7 @@ dependencies {
 
     implementation(libs.hilt.android.testing) // for AppTestRunner
     implementation(libs.androidx.test.runner) // for AppTestRunner
-    testImplementation(libs.test.mockk)
+    testImplementation(libs.mockk)
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
 }

@@ -74,5 +74,5 @@ class SyncWorker @AssistedInject constructor(
 
 val SyncConstraints
     get() = Constraints.Builder()
-//        .setRequiredNetworkType(NetworkType.CONNECTED)
+        .setRequiredNetworkType(NetworkType.CONNECTED)
         .build()
