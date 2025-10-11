@@ -22,7 +22,6 @@ android {
 
     defaultConfig {
         applicationId = "com.notifgram"
-        minSdk = 33
 
         versionCode = 1
         versionName = "1.0"
@@ -54,7 +53,7 @@ android {
         compose = true
     }
     composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
+        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()//TODO
     }
     packaging {
         resources {
