@@ -10,7 +10,6 @@ plugins {
     alias(libs.plugins.sonarqube) apply false
     alias(libs.plugins.hilt) apply false
     alias(libs.plugins.gms) apply false //Firebase
-
 }
 
 tasks.register("clean", Delete::class) {
