@@ -28,6 +28,7 @@ dependencies {
     api(libs.kotlinx.coroutines.test)
     api(libs.turbine)
     debugApi(libs.androidx.compose.ui.testManifest)
+//    debugApi(libs.androidx.compose.ui.testManifest)
 //    implementation(libs.core.ktx)
 //    implementation(libs.appcompat)
 ////    testImplementation(libs.junit4)

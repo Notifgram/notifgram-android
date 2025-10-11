@@ -11,7 +11,7 @@ androidxLifecycle = "2.9.2"
 androidxWork = "2.10.2"
 appcompat = "1.7.0"
 core-ktx = "1.16.0"
-compose = "1.9.2"               # https://developer.android.com/jetpack/androidx/releases/compose-kotlin
+#compose = "1.9.2"               # https://developer.android.com/jetpack/androidx/releases/compose-kotlin
 coroutines = "1.10.2"
 datastore = "1.1.7"
 exoplayer = "1.7.1"
@@ -47,10 +47,10 @@ androidx-compose-material3-windowSizeClass = { group = "androidx.compose.materia
 # ANDROIDX
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core-ktx" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-compose-bom = { group = "androidx.compose", name = "compose-bom", version = "2025.08.01" }
-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "compose" }
-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling", version.ref = "compose" }
-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview", version.ref = "compose" }
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version = "2025.08.01" }
+ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 androidx-compose-ui-util = { group = "androidx.compose.ui", name = "ui-util" }
 androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version = "1.8.2" }
 androidx-compose-runtime = { group = "androidx.compose.runtime", name = "runtime" }
@@ -137,8 +137,8 @@ mockk-android = { module = "io.mockk:mockk-android", version = "1.14.6" }
 espresso-idling-resource = { group = "androidx.test.espresso", name = "espresso-idling-resource", version.ref = "espresso-core" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 androidx-benchmark-macro-junit4 = { group = "androidx.benchmark", name = "benchmark-macro-junit4", version = "1.2.3" }
-androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose" } #https://androidx.tech/artifacts/compose.ui/ui-test-junit4/
-androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose" }
+androidx-compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" } #https://androidx.tech/artifacts/compose.ui/ui-test-junit4/
+androidx-compose-ui-testManifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 
 hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
 orchestrator = { group = "androidx.test", name = "orchestrator", version.ref = "orchestrator" }
@@ -149,8 +149,6 @@ androidx-test-uiautomator = { group = "androidx.test.uiautomator", name = "uiaut
 
 # ACCOMPANIST
 accompanist-permissions = { group = "com.google.accompanist", name = "accompanist-permissions", version.ref = "accompanist" }
-#accompanist-flowlayout = { group = "com.google.accompanist", name = "accompanist-flowlayout", version.ref = "accompanist" }
-accompanist-testharness = { group = "com.google.accompanist", name = "accompanist-testharness", version.ref = "accompanist" }
 
 # IMAGES
 landscapist-coil = { group = "com.github.skydoves", name = "landscapist-coil", version = "2.3.2" }
@@ -208,6 +206,7 @@ ksp-gradlePlugin = { group = "com.google.devtools.ksp", name = "com.google.devto
 kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
 android-gradleApiPlugin = { group = "com.android.tools.build", name = "gradle-api", version.ref = "agp" }
 android-tools-common = { group = "com.android.tools", name = "common", version.ref = "androidTools" }
+compose-gradlePlugin = { module = "org.jetbrains.kotlin:compose-compiler-gradle-plugin", version.ref = "kotlin" }
 
 [plugins]
 protobuf = { id = "com.google.protobuf", version = "0.9.4" }    #https://plugins.gradle.org/plugin/com.google.protobuf
@@ -229,4 +228,8 @@ notifgram-android-application = { id = "notifgram.android.application" }
 notifgram-android-library = { id = "notifgram.android.library" }
 notifgram-android-application-jacoco = { id = "notifgram.android.application.jacoco" }
 notifgram-android-library-jacoco = { id = "notifgram.android.library.jacoco" }
+
+notifgram-android-application-compose = { id = "notifgram.android.application.compose" }
+notifgram-android-library-compose = { id = "notifgram.android.library.compose" }
+
 notifgram-android-application-firebase = { id = "notifgram.android.application.firebase" }

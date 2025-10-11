@@ -2,6 +2,7 @@ import com.android.ide.common.util.toPathString
 
 plugins {
     alias(libs.plugins.notifgram.android.application)
+    alias(libs.plugins.notifgram.android.application.compose)
     id("notifgram.android.application.jacoco")
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.com.google.devtools.ksp)
@@ -11,8 +12,7 @@ plugins {
     id("org.sonarqube")
     //id("jacoco")
     id("org.jetbrains.kotlinx.kover")
-    alias(libs.plugins.compose)
-//    id("com.google.gms.google-services")// Must be at the end
+//    id("com.google.gms.google-services")
     alias(libs.plugins.notifgram.android.application.firebase)
 
 }
@@ -49,12 +49,6 @@ android {
         }
     }
 
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()//TODO
-    }
     packaging {
         resources {
             excludes += "/META-INF/{AL2.0,LGPL2.1}"
@@ -118,7 +112,7 @@ dependencies {
 //    implementation(libs.firebase.inappmessaging.display)
 
     implementation(libs.compose.material3)
-    implementation(libs.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling.preview)
 
     // Dagger-Hilt
     implementation(libs.hilt.android)

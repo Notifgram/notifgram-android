@@ -10,7 +10,7 @@ plugins {
     alias(libs.plugins.com.google.devtools.ksp)
 //    id("jacoco")                        // for sonarQube
     id("org.sonarqube")                 // for sonarQube
-    alias(libs.plugins.compose)
+    alias(libs.plugins.notifgram.android.library.compose)
 
 }
 
@@ -22,12 +22,6 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
-    }
 }
 
 dependencies {
@@ -46,7 +40,7 @@ dependencies {
     implementation(libs.ui)
     implementation(libs.compose.material3)
     implementation(libs.material.icons.extended)
-    implementation(libs.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.lifecycle.viewmodel.compose)
     implementation(libs.lifecycle.runtime.ktx)

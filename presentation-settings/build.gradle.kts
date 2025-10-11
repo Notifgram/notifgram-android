@@ -9,7 +9,7 @@ plugins {
     id("org.jetbrains.kotlinx.kover")
     alias(libs.plugins.com.google.devtools.ksp)
     id("org.sonarqube")
-    alias(libs.plugins.compose)
+    alias(libs.plugins.notifgram.android.library.compose)
 
 }
 
@@ -21,12 +21,6 @@ android {
         consumerProguardFiles("consumer-rules.pro")
     }
 
-    buildFeatures {
-        compose = true
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = libs.versions.kotlinCompilerExtensionVersion.get()
-    }
 }
 
 dependencies {
@@ -36,7 +30,7 @@ dependencies {
     implementation(project(":core:data-repository"))
     implementation(project(":core:presentation-core"))
     implementation(project(":core:domain"))
-    debugImplementation(libs.ui.tooling)
+    debugImplementation(libs.androidx.compose.ui.tooling)
     ksp(libs.hilt.android.compiler)
 
     implementation(libs.hilt.navigation.compose)
@@ -45,7 +39,7 @@ dependencies {
 //    implementation(libs.core.ktx)
 //    implementation(libs.appcompat)
     implementation(libs.compose.material3)
-    implementation(libs.ui.tooling.preview)
+    implementation(libs.androidx.compose.ui.tooling.preview)
     implementation(libs.lifecycle.runtime.compose)
     implementation(libs.material.icons.extended)
 

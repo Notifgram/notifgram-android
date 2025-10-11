@@ -1,6 +1,4 @@
-import org.gradle.kotlin.dsl.get
 import org.jetbrains.kotlin.gradle.dsl.JvmTarget
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
     `kotlin-dsl`
@@ -22,13 +20,17 @@ kotlin {
 dependencies {
     compileOnly(libs.android.gradleApiPlugin)
     compileOnly(libs.android.tools.common)
-
+    compileOnly(libs.compose.gradlePlugin)
     compileOnly(libs.kotlin.gradlePlugin)
     compileOnly(libs.ksp.gradlePlugin)
 }
 
 gradlePlugin {
     plugins {
+        register("androidApplicationCompose") {
+            id = libs.plugins.notifgram.android.application.compose.get().pluginId
+            implementationClass = "AndroidApplicationComposeConventionPlugin"
+        }
         register("androidApplication") {
             id = libs.plugins.notifgram.android.application.asProvider().get().pluginId
             implementationClass = "AndroidApplicationConventionPlugin"
@@ -36,6 +38,10 @@ gradlePlugin {
         register("androidApplicationJacoco") {
             id = libs.plugins.notifgram.android.application.jacoco.get().pluginId
             implementationClass = "AndroidApplicationJacocoConventionPlugin"
+        }
+        register("androidLibraryCompose") {
+            id = libs.plugins.notifgram.android.library.compose.get().pluginId
+            implementationClass = "AndroidLibraryComposeConventionPlugin"
         }
         register("androidLibrary") {
             id = libs.plugins.notifgram.android.library.asProvider().get().pluginId
