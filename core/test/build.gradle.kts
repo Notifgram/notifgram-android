@@ -14,7 +14,7 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:common"))
+    api(project(":core:common"))
     implementation(project(":core:data-repository"))
     implementation(project(":core:domain"))
 

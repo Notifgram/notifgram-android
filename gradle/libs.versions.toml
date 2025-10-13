@@ -1,9 +1,5 @@
 [versions]
 
-# VARIABLES
-defaultCompileSdkVersion = "35"
-kotlinCompilerExtensionVersion = "1.5.8"   #https://developer.android.com/jetpack/androidx/releases/compose-kotlin
-
 # FOR LIBRARIES
 accompanist = "0.37.0"               #https://github.com/google/accompanist#compose-versions
 androidTools = "31.12.2"
@@ -124,7 +120,8 @@ protobuf-protoc = { group = "com.google.protobuf", name = "protoc", version.ref 
 junit4 = { group = "junit", name = "junit", version = "4.13.2" }
 mockito-kotlin = { group = "org.mockito.kotlin", name = "mockito-kotlin", version.ref = "mockito" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutines" }
-kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }
+kotlin-test-junit = { group = "org.jetbrains.kotlin", name = "kotlin-test-junit", version.ref = "kotlin" }#TODO: replace with test-junit
+kotlin-test = { group = "org.jetbrains.kotlin", name = "kotlin-test", version.ref = "kotlin" }#for convention
 turbine = { group = "app.cash.turbine", name = "turbine", version = "1.2.0" }
 androidx-monitor = { group = "androidx.test", name = "monitor", version = "1.6.1" }
 androidx-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version = "1.3.0-rc01" }

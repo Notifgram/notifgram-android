@@ -44,9 +44,7 @@ android {
             )
             signingConfig = signingConfigs.getByName("debug")
         }
-        debug {
-            enableAndroidTestCoverage = true
-        }
+
     }
 
     packaging {
