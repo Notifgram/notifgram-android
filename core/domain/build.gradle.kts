@@ -28,8 +28,8 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
-
-    testImplementation(project(":core:test"))
+    testImplementation(projects.core.test)
+//    testImplementation(project(":core:test"))
     testImplementation(libs.kotlin.test.junit)
     testImplementation(libs.junit4)
     testImplementation(libs.kotlinx.coroutines.test)

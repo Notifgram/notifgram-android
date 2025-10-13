@@ -54,7 +54,7 @@ dependencies {
 
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.test.ext.junit)
-    testImplementation(project(":core:test"))
+//    testImplementation(project(":core:test"))
 }
 
 sonarqube {
