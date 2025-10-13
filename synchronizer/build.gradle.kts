@@ -1,14 +1,12 @@
-import com.android.ide.common.util.toPathString
-
 plugins {
     alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    id("notifgram.android.library.jacoco")
+    alias(libs.plugins.notifgram.android.library.jacoco)
     alias(libs.plugins.com.google.devtools.ksp)
     id("kotlin-parcelize")
     id("dagger.hilt.android.plugin")
 //    id("androidx.benchmark")
-    id("org.jetbrains.kotlinx.kover")
+    alias(libs.plugins.kover)
     id("org.sonarqube")
 //    id("jacoco")
 }

@@ -3,9 +3,9 @@ import com.android.ide.common.util.toPathString
 plugins {
     alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    id("notifgram.android.library.jacoco")
+    alias(libs.plugins.notifgram.android.library.jacoco)
     id("dagger.hilt.android.plugin")
-    id("org.jetbrains.kotlinx.kover")
+    alias(libs.plugins.kover)
     alias(libs.plugins.com.google.devtools.ksp)
     id("org.sonarqube")
     //id("jacoco")

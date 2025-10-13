@@ -4,8 +4,8 @@ import com.android.ide.common.util.toPathString
 plugins {
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.notifgram.android.library)
-    id("notifgram.android.library.jacoco")
-    id("org.jetbrains.kotlinx.kover")
+    alias(libs.plugins.notifgram.android.library.jacoco)
+    alias(libs.plugins.kover)
     id("org.sonarqube")
 //    id("jacoco")
     alias(libs.plugins.com.google.devtools.ksp)
@@ -19,12 +19,6 @@ android {
         testInstrumentationRunner = "com.notifgram.core.common.AppTestRunner"
 
         consumerProguardFiles("consumer-rules.pro")
-    }
-
-    buildTypes {
-        debug {
-            enableAndroidTestCoverage = true
-        }
     }
 }
 
