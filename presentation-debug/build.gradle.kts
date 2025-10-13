@@ -25,9 +25,9 @@ dependencies {
     testImplementation(libs.junit4)
     implementation(libs.hilt.navigation.compose)
 
-    implementation(project(":core:domain"))
-    implementation(project(":core:presentation-core"))
-    implementation(project(":core:common"))
+    implementation(projects.core.domain)
+    implementation(projects.core.presentationCore)
+    implementation(projects.core.common)
 
     implementation(libs.kotlinx.coroutines.android)
     implementation(libs.ui)

@@ -1,22 +1,16 @@
 plugins {
     alias(libs.plugins.notifgram.android.library)
-    alias(libs.plugins.org.jetbrains.kotlin.android)
+//    alias(libs.plugins.org.jetbrains.kotlin.android)
 }
 
 android {
     namespace = "com.notifgram.core.test"
-
-    defaultConfig {
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
-        consumerProguardFiles("consumer-rules.pro")
-    }
-
 }
 
 dependencies {
-    api(project(":core:common"))
-    implementation(project(":core:data-repository"))
-    implementation(project(":core:domain"))
+    api(projects.core.common)
+    implementation(projects.core.dataRepository)
+    implementation(projects.core.domain)
 
 //    api(libs.androidx.compose.ui.test)
     api(libs.androidx.test.core)

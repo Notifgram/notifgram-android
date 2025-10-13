@@ -32,10 +32,9 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":core:domain"))
-    implementation(project(":core:data-repository"))
-    implementation(project(":core:common"))
+    implementation(projects.core.domain)
+    implementation(projects.core.dataRepository)
+    implementation(projects.core.common)
 
     implementation(libs.kotlinx.serialization.json)
 

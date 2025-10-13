@@ -23,10 +23,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:data-file"))
-    implementation(project(":core:presentation-core"))
-    implementation(project(":core:common"))
+    implementation(projects.core.domain)
+    implementation(projects.core.dataFile)
+    implementation(projects.core.presentationCore)
+    implementation(projects.core.common)
 
     implementation(libs.media3.exoplayer)
     implementation(libs.media3.ui)

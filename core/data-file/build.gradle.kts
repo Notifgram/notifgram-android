@@ -21,10 +21,9 @@ android {
 }
 
 dependencies {
-
-    implementation(project(":core:data-repository"))
-    implementation(project(":core:common"))
-    implementation(project(":core:domain"))
+    implementation(projects.core.dataRepository)
+    implementation(projects.core.common)
+    implementation(projects.core.domain)
 
     implementation(libs.hilt.android)
     ksp(libs.androidx.hilt.compiler)

@@ -26,10 +26,10 @@ android {
 dependencies {
     implementation(libs.accompanist.permissions)
     implementation(libs.hilt.android)
-    implementation(project(":core:common"))
-    implementation(project(":core:data-repository"))
-    implementation(project(":core:presentation-core"))
-    implementation(project(":core:domain"))
+    implementation(projects.core.common)
+    implementation(projects.core.dataRepository)
+    implementation(projects.core.presentationCore)
+    implementation(projects.core.domain)
     debugImplementation(libs.androidx.compose.ui.tooling)
     ksp(libs.hilt.android.compiler)
 

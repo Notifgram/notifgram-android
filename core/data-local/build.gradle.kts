@@ -23,10 +23,10 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:common"))
-    implementation(project(":core:data-repository"))
-    implementation(project(":core:data-datastore"))
+    implementation(projects.core.domain)
+    implementation(projects.core.common)
+    implementation(projects.core.dataRepository)
+    implementation(projects.core.dataDatastore)
 
     implementation(libs.sqlite.ktx)
     implementation(libs.android.database.sqlcipher)

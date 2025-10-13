@@ -24,8 +24,8 @@ android {
 }
 
 dependencies {
-    implementation(project(":core:domain"))
-    implementation(project(":core:common"))
+    implementation(projects.core.domain)
+    implementation(projects.core.common)
 
     implementation(libs.kotlinx.serialization.json)             // for sync
 
