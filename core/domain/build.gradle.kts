@@ -29,7 +29,7 @@ dependencies {
     implementation(libs.hilt.android)
     ksp(libs.hilt.android.compiler)
 //    testImplementation(projects.core.test)
-    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.kotlin.test)
     testImplementation(libs.junit4)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)

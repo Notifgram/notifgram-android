@@ -46,7 +46,7 @@ dependencies {
     testImplementation(libs.junit4)
     androidTestImplementation(libs.androidx.work.testing)
     androidTestImplementation(libs.hilt.android.testing)
-    androidTestImplementation(libs.kotlin.test.junit)
+    androidTestImplementation(libs.kotlin.test)
     implementation(libs.core.ktx)
 //    implementation(libs.appcompat)
     androidTestImplementation(libs.androidx.test.ext.junit)

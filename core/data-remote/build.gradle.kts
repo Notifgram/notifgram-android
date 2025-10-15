@@ -52,8 +52,8 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
-    testImplementation(libs.kotlin.test.junit)
-    testImplementation(libs.mockk)
+    testImplementation(libs.kotlin.test)
+    testImplementation(libs.mockk.android)
 }
 
 sonarqube {

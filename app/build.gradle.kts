@@ -124,7 +124,7 @@ dependencies {
 
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
-    testImplementation(libs.mockk)
+    testImplementation(libs.mockk.android)
     testImplementation(libs.androidx.test.runner)
 
     androidTestImplementation(libs.mockk.android)

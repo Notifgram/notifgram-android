@@ -36,7 +36,7 @@ dependencies {
     testImplementation(libs.junit4)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.kotlinx.coroutines.test)
-    testImplementation(libs.kotlin.test.junit)
+    testImplementation(libs.kotlin.test)
     
 }
 
