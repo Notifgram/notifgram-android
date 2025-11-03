@@ -9,7 +9,7 @@ plugins {
     id("org.sonarqube")
 //    id("jacoco")
     alias(libs.plugins.com.google.devtools.ksp)
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.hilt)
 }
 
 android {

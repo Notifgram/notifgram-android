@@ -1,7 +1,7 @@
 plugins {
     alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.hilt)
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.notifgram.android.library.compose)
 

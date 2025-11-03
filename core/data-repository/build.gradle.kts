@@ -5,7 +5,7 @@ plugins {
     alias(libs.plugins.kotlin.serialization)
     alias(libs.plugins.notifgram.android.library.jacoco)
     id("org.jetbrains.kotlin.android")
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.hilt)
 //    id("androidx.benchmark")
     id("org.sonarqube")
     alias(libs.plugins.kover)

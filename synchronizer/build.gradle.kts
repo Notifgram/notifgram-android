@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.notifgram.android.library.jacoco)
     alias(libs.plugins.com.google.devtools.ksp)
     id("kotlin-parcelize")
-    id("dagger.hilt.android.plugin")
+    alias(libs.plugins.hilt)
 //    id("androidx.benchmark")
     alias(libs.plugins.kover)
     id("org.sonarqube")

@@ -4,7 +4,7 @@ plugins {
     alias(libs.plugins.notifgram.android.library)
     alias(libs.plugins.org.jetbrains.kotlin.android)
     alias(libs.plugins.notifgram.android.library.jacoco)
-    id("dagger.hilt.android.plugin")    // for hilt
+    alias(libs.plugins.hilt)    // for hilt
     alias(libs.plugins.com.google.devtools.ksp)
     alias(libs.plugins.kover)
     id("org.sonarqube")
