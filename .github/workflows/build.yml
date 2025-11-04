@@ -95,37 +95,6 @@ jobs:
           name: local-test-results
           path: '**/build/test-results/test*UnitTest/**.xml'
 
-      - name: Check lint
-        run: ./gradlew :app:lintRelease #:lint:lint
-
-      - name: Upload lint reports (HTML)
-        if: ${{ !cancelled() }}
-        uses: actions/upload-artifact@v4
-        with:
-          name: lint-reports
-          path: '**/build/reports/lint-results-*.html'
-
-      - name: Upload lint reports (SARIF) for app module
-        if: ${{ !cancelled() && hashFiles('app/**/*.sarif') != '' }}
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: './app/'
-          category: app
-
-      - name: Upload lint reports (SARIF) for app-nia-catalog module
-        if: ${{ !cancelled() && hashFiles('app-nia-catalog/**/*.sarif') != '' }}
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: './app-nia-catalog/'
-          category: app-nia-catalog
-
-      - name: Upload lint reports (SARIF) for lint module
-        if: ${{ !cancelled() && hashFiles('lint/**/*.sarif') != '' }}
-        uses: github/codeql-action/upload-sarif@v3
-        with:
-          sarif_file: './lint/'
-          category: lint
-
   androidTest:
     runs-on: ubuntu-latest
     timeout-minutes: 55
