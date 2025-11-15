@@ -53,7 +53,7 @@ dependencies {
     testImplementation(libs.kotlinx.coroutines.test)
     testImplementation(libs.mockito.kotlin)
     testImplementation(libs.kotlin.test)
-    testImplementation(libs.mockk.android)
+    testImplementation(libs.mockk)
 }
 
 sonarqube {
